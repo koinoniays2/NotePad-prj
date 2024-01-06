@@ -25,7 +25,7 @@ export default function Quote() {
                 // 에러 발생 시 에러 객체의 meassage로 error상태 변경
                 setError(err.message);
             });
-    })
+    }, []); // 빈 배열 전달 : 리렌더링 될 때마다 명언이 바뀌는 것 방지(처음 렌더링될 때 한번만 API호출)
     return (
         <div className="w-1/3 text-center">
             {loading ? <p>Loading...</p> : <p>{quote}</p>}
