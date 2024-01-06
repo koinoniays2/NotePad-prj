@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./Button";
 import Header from "./Header";
 import Quote from "./Quote";
@@ -27,9 +27,19 @@ export default function App() {
       [e.target.name]: e.target.value
     });
   }
+  
+  const [content, setContent] = useState(() => {
+    // 로컬 스토리지에서 데이터 불러오기
+    const storedContent = localStorage.getItem("memoContent");
+    return storedContent ? JSON.parse(storedContent) : [];
+  });
+  // useEffect를 사용하여 content의 변경을 감지하고 로컬 스토리지에 저장
+  useEffect(() => {
+    localStorage.setItem("memoContent", JSON.stringify(content));
+  }, [content]);
 
+  // const [content, setContent] = useState([]);
   // 등록 버튼 클릭 시 content에 내용 저장
-  const [content, setContent] = useState([]);
   const saveClick = () => {
     setHidden("hidden"); // 모달창 hidden
     const newValue = content.concat({
