@@ -126,7 +126,7 @@ export default function App() {
               {content.map((item) => {
                 return (
                   <li className="py-1 border-b border-[#4C4C4C] cursor-pointer" key={item.key} onClick={() => showClick(item.key)}>
-                    <p className="font-bold">{item.title}</p>
+                    <p className="whitespace-pre font-bold">{item.title}</p>
                     {/* 공백 & 줄바꿈 입력값 유지하여 출력(whitespace-pre-line) */}
                     <p className="whitespace-pre-line">{item.body}</p>
                   </li>
