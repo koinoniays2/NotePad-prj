@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 import Header from "./Header";
 import Quote from "./Quote";
+import { ReactSortable } from "react-sortablejs";
 
 export default function App() {
   const [memoKey, setMemoKey] = useState(1); // Key
@@ -110,6 +111,7 @@ export default function App() {
           {/* 메모장 */}
           <section className="w-1/3 h-[500px] p-5 bg-yellow-100">
             <ul>
+              <ReactSortable list={content} setList={setContent}>
               {/* content에 등록 된 내용 렌더링*/}
               {content.map((item) => {
                 return (
@@ -120,6 +122,7 @@ export default function App() {
                   </li>
                 )
               })}
+              </ReactSortable>
             </ul>
           </section>
         </div>
