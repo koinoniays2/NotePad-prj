@@ -14,8 +14,7 @@ Button.jsx : 버튼
 - react-sortablejs 라이브러리를 이용하여 드래그 앤 드롭 기능 추가
 - localStorage에 데이터 저장 기능
 ### 실행화면
-실행 사이트(PC만 지원합니다.)  
-https://singular-jelly-e99f89.netlify.app/
+[메모장](https://singular-jelly-e99f89.netlify.app/) (PC만 지원합니다.) 
 #### API(실패, 로딩, 성공시 화면)
 API를 불러오는 데 실패했을 경우 에러 메세지 출력  
 ![API-error](https://github.com/koinoniays2/NotePad-prj/assets/150204668/1c9724ab-dd78-4c2a-a09b-ea5fb9a88d4a)  
